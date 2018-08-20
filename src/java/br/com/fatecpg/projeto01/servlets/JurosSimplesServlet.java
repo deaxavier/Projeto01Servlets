@@ -47,7 +47,10 @@ public class JurosSimplesServlet extends HttpServlet {
             out.println("Período (em meses): <input type=\"text\" name=\"n\"/>");
             out.println("Capital (em Reais): <input type=\"text\" name=\"C\"/>");
             out.println("<input type=\"submit\" value=\"Calcular\"/>");
+            out.println("</form>");
             out.println("<h3><a href='index.html'>Voltar</a></h3>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 

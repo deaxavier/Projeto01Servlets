@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author deaxa
  */
-@WebServlet(name = "JurosCompostosServlet", urlPatterns = {"/juroscompposto.html"})
-public class JurosCompostosServlet extends HttpServlet {
+@WebServlet(name = "CalculaJurosSimplesServlet", urlPatterns = {"/calculajurossimples.html"})
+public class CalculaJurosSimplesServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,21 +34,16 @@ public class JurosCompostosServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-             out.println("<!DOCTYPE html>");
+            out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>JurosCompostos</title>");            
+            out.println("<title>Calcula Juros Simples</title>");            
             out.println("</head>");
-            out.println("<body>");            
-            out.println("<h1>Calculadora de Juros</h1>");
-            out.println("<h3>Cálculo de Juros Compostos</h3>");
-            out.println("<form action=\"calculajuroscompostos.html\">");
-            out.println("Taxa de juros: <input type=\"text\" name=\"i\"/>");
-            out.println("Período (em meses): <input type=\"text\" name=\"n\"/>");
-            out.println("Capital (em Reais): <input type=\"text\" name=\"C\"/>");
-            out.println("<input type=\"submit\" value=\"Calcular\"/>");
-            out.println("</form>");
-            out.println("<h3><a href='index.html'>Voltar</a></h3>");
+            out.println("<body>");
+            double i = Double.parseDouble(request.getParameter("i"));
+            double n = Double.parseDouble(request.getParameter("n"));
+            double C = Double.parseDouble(request.getParameter("C"));
+            out.println("<h2>Juros do período de "+n+" meses: R$"+(C*i*n)+"</h2>");
             out.println("</body>");
             out.println("</html>");
         }
