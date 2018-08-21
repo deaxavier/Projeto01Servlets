@@ -45,7 +45,10 @@ public class CalculaJurosCompostosServlet extends HttpServlet {
             double C = Double.parseDouble(request.getParameter("C"));
             for(int v=1; v<=n; v++){
             out.println("<h2>Montate do mês "+v+": R$"+(C*(Math.pow((1+(i/100)),v)))+"</h2>");
-            }     
+            }
+            out.println("<h3><a href='juroscompposto.html'>Calcular Juros Compostos</a></h3>");
+            out.println("<h3><a href='jurossimples.html'>Calcular Juros Simples</a></h3>");
+            out.println("<h3><a href='index.html'>Home</a></h3>");
             out.println("</body>");
             out.println("</html>");
         }

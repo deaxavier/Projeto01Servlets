@@ -43,7 +43,7 @@ public class JurosCompostosServlet extends HttpServlet {
             out.println("<h1>Calculadora de Juros</h1>");
             out.println("<h3>Cálculo de Juros Compostos</h3>");
             out.println("<form action=\"calculajuroscompostos.html\">");
-            out.println("Taxa de juros: <input type=\"text\" name=\"i\"/>");
+            out.println("Taxa de juros (%): <input type=\"text\" name=\"i\"/>");
             out.println("Período (em meses): <input type=\"text\" name=\"n\"/>");
             out.println("Capital (em Reais): <input type=\"text\" name=\"C\"/>");
             out.println("<input type=\"submit\" value=\"Calcular\"/>");
