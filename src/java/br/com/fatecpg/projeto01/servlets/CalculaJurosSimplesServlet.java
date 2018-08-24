@@ -7,6 +7,8 @@ package br.com.fatecpg.projeto01.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,9 +43,12 @@ public class CalculaJurosSimplesServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             double i = Double.parseDouble(request.getParameter("i"));
-            double n = Double.parseDouble(request.getParameter("n"));
+            int n = (int) Double.parseDouble(request.getParameter("n"));
             double C = Double.parseDouble(request.getParameter("C"));
-            out.println("<h2>Juros do período de "+n+" meses: R$"+(C*i*n)+"</h2>");
+            i = i/100;
+            double montante = C*i*n;
+            String a = NumberFormat.getCurrencyInstance().format(montante);        
+            out.println("<h2>Juros do período de "+n+" meses: "+a+"</h2>");
             out.println("<h3><a href='juroscompposto.html'>Calcular Juros Compostos</a></h3>");
             out.println("<h3><a href='jurossimples.html'>Calcular Juros Simples</a></h3>");
             out.println("<h3><a href='index.html'>Home</a></h3>");
