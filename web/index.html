@@ -6,44 +6,73 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>PROJETO 01</title>
-        <!--link rel="stylesheet" type="text/css" href="estilo.css"-->
+        <title>Projeto01</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="web/css/css.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600">
+
     </head>
     <body>
-        <header>
-            <div>
-                <h1>Projeto 01</h1>
-                <h2>Servlets para Cálculod de Juros</h2>
+     <section>
+      <div class="container" align="center"> 
+          <div class="row">
+          <h1>Projeto 01</h1> 
+          <h2> Juros simples e Juros compostos </h2>
+            <p>Projeto elaborado para compreenção de aplicação de servlets no desenvolvimento de aplicações voltadas para web.</p>
+            <h3>Equipe de Desenvolvimento</h3>
+            <div class = "col-xs-12 col-sm-12 col-md-3   col-lg-3" align="center">
+                <h5>Cassiano Lucas Vieira</h5>
             </div>
-        </header>
-        <main>
-            <section>
-                <div>
-                    <h3>O Projeto</h3>
-                    <p>Projeto elaborado para compreenção de aplicação de servlets no desenvolvimento de aplicações voltadas para web</p>
-                </div>
-                <div>
-                    <h3>Equipe de Desenvolvimento</h3>
-                    <p>Cassiano Lucas Vieira</p>
-                    <p>Weslley Antônio Silva Miranda</p>
-                    <p>Victória Alicia Rodovalho</p>
-                    <p>Fabrício Lima da Silva</p>
-                    <p>Andrea Xavier</p>
-                </div>                
-            </section>
-            <section>
-                <div>
-                    <h1>Calculadora de Juros</h1>
-                </div>
-                <div>
-                    <h3><a href="jurossimples.html">Cálculo de juros Simples</a></h3>
-                </div>
-                <div>
-                    <h3><a href="juroscompposto.html">Cálculo de Juros Composto</a></h3>                        
-                </div>
-            </section>            
-        </main>
+            <div class = "col-xs-12 col-sm-12 col-md-2 col-lg-2" align="center">
+                <h5>Victória Alicia Rodovalho</h5>
+            </div>
+            <div class = "col-xs-12 col-sm-12 col-md-2 col-lg-2" align="center">
+                <h5>Fabrício Lima da Silva</h5>
+            </div>
+            <div class = "col-xs-12 col-sm-12 col-md-2 col-lg-2" align="center">
+                <h5>Andrea Xavier</h5>
+            </div>
+            <div class = "col-xs-12 col-sm-12 col-md-2 col-lg-2" align="center">
+                <h5>Weslley Antônio</h5>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" align="center">
+              <h3> Juros Simples</h3>
+              <div align ="left">
+                <ul>
+                <li>São pagos periodicamente (mensal ou anualmente) ao credor.</li>
+                <li>São nominalmente iguais ao longo do tempo, mas reduzem em termos reais (efeito da inflação).</li>
+                <li>Nominalmente somados ao capital formariam uma reta (ex.: 1000, 1100, 1200, etc).</li>
+                <li>São como os frutos de uma árvore: são colhidos e consumidos.</li>
+                <li>Tecnicamente, ocorre a fruição imediata dos juros pelo credor.</li>
+                <li>Se não pagos e não incorporados ao montante, gera perda inflacionária e da porcentagem de rendimento.</li>
+                </ul>
+          </div>
+              <a href="jurossimples.html">
+                <button type="submit" class="btn botao-form">Juros Simples</button>
+              </a>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" align="center">
+              <h3> Juros Composto</h3>
+              <div align ="left">
+                <ul>
+                <li>São pagos ao credor somente no vencimento (no final).</li>
+                <li>São crescentes no tempo em termos reais e nominais, se a taxa for maior que a inflação.</li>
+                <li>Incorporados ao capital formam uma curva ascendente. (ex.: 1000, 1100, 1210, etc).</li>
+                <li>São como bezerros que, ao crescerem, gerarão novas bezerros.</li>
+                <li>Tecnicamente, ocorre a fruição diferida dos juros pelo credor.</li>
+                <li>Se pagos, não incorporam ao montante, que não cresce durante o período em que forem pagos.</li>
+                </ul>
+          </div>
+              <a href="servlets/juroscompposto.html">
+                <button type="submit" class="btn botao-form">Juros Composto</button>
+              </a> 
+          </div>
+      </div>
+    </section>
     </body>
 </html>
