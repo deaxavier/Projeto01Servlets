@@ -7,8 +7,6 @@ package br.com.fatecpg.projeto01.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -45,12 +43,8 @@ public class CalculaJurosCompostosServlet extends HttpServlet {
             double i = Double.parseDouble(request.getParameter("i"));
             double n = Double.parseDouble(request.getParameter("n"));
             double C = Double.parseDouble(request.getParameter("C"));
-            NumberFormat z = NumberFormat.getCurrencyInstance();
             for(int v=1; v<=n; v++){
-            double montante = C*(Math.pow((1+(i/100)),v)); 
-            
-            out.println("<h2>Montante do mês "+v+": "+z.format(montante)+"</h2>");
-                        
+            out.println("<h2>Montate do mês "+v+": R$"+(C*(Math.pow((1+(i/100)),v)))+"</h2>");
             }
             out.println("<h3><a href='juroscompposto.html'>Calcular Juros Compostos</a></h3>");
             out.println("<h3><a href='jurossimples.html'>Calcular Juros Simples</a></h3>");
