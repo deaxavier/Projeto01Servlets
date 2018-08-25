@@ -1,0 +1,31 @@
+*{margin: 0; padding: 0;}
+
+h1{
+	font-family: "Open Sans Condensed" !important;
+	text-align: center !important;
+	font-size: 60px !important;
+        
+
+}
+
+h2{
+	font-family: "Open Sans Condensed" !important;
+        
+
+}
+
+h3,h4,h6,p,h3 a{
+	font-family:"Grimsom Text"!important;
+        
+
+}
+h5{
+    font-family:"Grimsom Text"!important;
+    font-weight:900!important;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.846 !important;
+}
