@@ -14,10 +14,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
- * @author deaxa
+ * @author deaxa *
+
  */
-@WebServlet(name = "JurosCompostosServlet", urlPatterns = {"/juroscompposto.html"})
+@WebServlet(name = "JurosCompostosServlet", urlPatterns = {"/juroscomposto.html"})
 public class JurosCompostosServlet extends HttpServlet {
 
     /**
@@ -42,18 +42,30 @@ public class JurosCompostosServlet extends HttpServlet {
             out.println("<body>");            
             out.println("<h1>Calculadora de Juros</h1>");
             out.println("<h3>Cálculo de Juros Compostos</h3>");
-            out.println("<form action=\"calculajuroscompostos.html\">");
+            out.println("<form method='get'>");
             out.println("Taxa de juros (%): <input type=\"text\" name=\"i\"/>");
-            out.println("Período (em meses): <input type=\"text\" name=\"n\"/>");
+            out.println("Período (em meses): <input type=\"number\" name=\"n\" max='12'/>" );
             out.println("Capital (em Reais): <input type=\"text\" name=\"C\"/>");
             out.println("<input type=\"submit\" value=\"Calcular\"/>");
             out.println("</form>");
-            out.println("<h3><a href='index.html'>Voltar</a></h3>");
-            out.println("</body>");
+            if(request.getParameter("C") != null){
+                try{
+                    double i = Double.parseDouble(request.getParameter("i"));
+                    double n = Double.parseDouble(request.getParameter("n"));
+                    double C = Double.parseDouble(request.getParameter("C"));
+                    for(int v=1; v<=n; v++){
+                    out.println("<h2>Montate do mês "+v+": R$"+(C*(Math.pow((1+(i/100)),v)))+"</h2>");}
+                    
+                    }catch(Exception ex){
+                    out.println("Não é valido");
+                }
+            }
+            out.println("<h3><a href='juroscomposto.html'>Calcular Juros Compostos</a></h3>");
+            out.println("<h3><a href='jurossimples.html'>Calcular Juros Simples</a></h3>");
+            out.println("<h3><a href='index.html'>Volta</a></h3>");
             out.println("</html>");
         }
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

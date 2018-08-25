@@ -39,16 +39,37 @@ public class JurosSimplesServlet extends HttpServlet {
             out.println("<head>");
             out.println("<title>JurosSimples</title>");            
             out.println("</head>");
-            out.println("<body>");            
+            out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n");
+            out.println("<link rel=\"stylesheet\" href=\"bootstrap/css/bootstrap-theme.css\" type=\"text/css\"/>");
+            out.println("<body>");      
             out.println("<h1>Calculadora de Juros</h1>");
-            out.println("<h3>Cálculo de Juros Simples</h3>");
-            out.println("<form action=\"calculajurossimples.html\">");
-            out.println("Taxa de juros: <input type=\"text\" name=\"i\"/>");
-            out.println("Período (em meses): <input type=\"text\" name=\"n\"/>");
-            out.println("Capital (em Reais): <input type=\"text\" name=\"C\"/>");
+            out.println("<div class=\"container\" align=\"center\"> \n");            
+            out.println("<h2>Cálculo de Juros Simples</h2>");
+            out.println("<div class = 'col-xs-12 col-sm-12 col-md-3 col-lg-3' align='center'> ");
+            out.println("<form method='get'>");
+            out.println(" <div class=form>");
+            out.println("<div class=\"form-row align-items-center\">");
+            out.println("Taxa de juros: <input type=\"text\" name=\"i\"/><br>");
+            out.println("</div>");
+            out.println("</div>");
+            out.println("<div class='form-group'>");
+            out.println("Período (em meses): <input type=\"text\" name=\"n\"/><br>");
+            out.println("Capital (em Reais): <input type=\"text\" name=\"C\"/><br>");
             out.println("<input type=\"submit\" value=\"Calcular\"/>");
             out.println("</form>");
+            if(request.getParameter("C") != null){
+                try{
+                    double i = Double.parseDouble(request.getParameter("i"));
+                    double n = Double.parseDouble(request.getParameter("n"));
+                    double C = Double.parseDouble(request.getParameter("C"));
+                    out.println("<h2>Juros do período de "+ n +" meses: R$: "+(C*i*n)+"</h2>");
+                }catch(Exception ex){
+                    out.println("Não é valido");
+                }
+            }
+            out.println("<h3><a href='juroscomposto.html'>Calcular Juros Compostos</a></h3>");
             out.println("<h3><a href='index.html'>Voltar</a></h3>");
+            out.println("</div>");
             out.println("</body>");
             out.println("</html>");
         }
